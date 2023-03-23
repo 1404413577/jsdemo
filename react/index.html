@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./react.js"></script>
+    <script src="./react-dom.js"></script>
+    <script src="./babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    // 1 define component function and render it to the root element of html page
+    const App = () => {
+      return (
+        <div>
+          <h1>React</h1>   
+          <h2>{msg}</h2>
+          <button onClick={handleClick}>click</button>
+          <p>------------------------------</p>
+          // how to bind event use id of react element
+          <button onClick={showHide}>click</button>
+          <div
+            id="div1"
+            style={{ width: "200px", height: "200px", background: "red" }}
+          >
+            <p>i am tag of p inside the div</p>
+          </div>
+          
+        </div>
+      );
+    };
+    // define text as variable
+    let msg = "hello world";
+
+    // 2 listen click event of button and change the value of variable  msg and re-render the component 
+
+    function handleClick() {
+      // Modify the value of the variable msg
+      if (msg === "你好 世界") {
+        msg = "hello world";
+      } else {
+        msg = "你好 世界";
+      }
+
+      // re-render the component
+      ReactDOM.render(<App />, document.getElementById("root"));
+    }
+
+    // 3 listen click event of button and change the display property of div
+    function showHide() {
+      // get the div element by id 
+      const div1 = document.getElementById("div1");
+      // judgment the display property of div and change it 
+      if (div1.style.display === "none") {
+        div1.style.display = "block";
+      } else {
+        div1.style.display = "none";
+      }
+    }
+
+    // component function
+    function btnClick() {
+        alert("hello world");
+    }
+
+    // render the component to the root element of html page 
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</html>

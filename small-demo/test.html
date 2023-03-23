@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .nima {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nima">
+      <input
+        type="text"
+        value=""
+        name="id"
+        class="id"
+        placeholder="请输入账号"
+      />
+      <br /><br />
+      <input
+        type="text"
+        value=""
+        name="name"
+        class="name"
+        placeholder="请输入账号"
+      />
+      <br /><br />
+      <input
+        type="text"
+        value=""
+        name="date"
+        class="date"
+        placeholder="请输入账号"
+      />
+      <br /><br />
+      <input
+        type="text"
+        value=""
+        name="prince"
+        class="prince"
+        placeholder="请输入账号"
+      />
+      <br /><br />
+      <input
+        type="text"
+        value=""
+        name="num"
+        class="num"
+        placeholder="请输入账号"
+      />
+      <br /><br />
+      <button class="btn">登录/注册</button>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(".btn").click(() => {
+    $.ajax({
+      url: "/book/add",
+      method: "GET",
+      data: {
+        id: $(".id").val(),
+        name: $(".name").val(),
+        date: $(".date").val(),
+        prince: $(".prince").val(),
+        num: $(".num").val(),
+      },
+      success(res) {
+        console.log(res);
+      },
+      error(err) {
+        console.log(err);
+      },
+    });
+  });
+</script>

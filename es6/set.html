@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    // // Set值不重复 数组的值可以重复
+    // let s = new Set([1,2,3])
+    // s.add(5).delete(1)
+    // console.log(s)
+// 只能存储对象 若引用 垃圾回收机制
+    let ws = new WeakSet()
+    const obj1 = {
+        name:"hai"
+    }
+    ws.add(obj1)
+   
+    ws.add({
+        age:5
+    })
+
+    ws.delete({
+        name:"hai"
+    })
+    console.log(ws)
+
+    // console.log(ws.delete(obj1))
+
+
+</script>
+
+</html>

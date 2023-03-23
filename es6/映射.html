@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+<script>
+    // 将对象的一些方法转移到reflect
+    let obj = {}
+    let newVal = ''
+    Reflect.defineProperty(obj, 'name', {
+        get() {
+            return newVal
+        },
+        set(val){
+            console.log(val)
+            newVal = val
+        }
+
+    })
+    obj.name = 'hai'
+    console.log(obj.name)
+</script>
+
+</html>

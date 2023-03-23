@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+      .select {
+        display: flex;
+      }
+
+      .select div {
+        width: 60px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid black;
+        margin: 10px;
+      }
+      .page div {
+        width: 300px;
+        height: 200px;
+        background-color: aqua;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="select">
+      <div class="tab-item">
+        <a href="">选项卡1</a>
+      </div>
+      <div class="tab-item">
+        <a href="">选项卡2</a>
+      </div>
+      <div class="tav-item">
+        <a href="">选项卡3</a>
+      </div>
+    </div>
+    <div class="page" id="page">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+  </body>
+  <script>
+    let tabItem = document.getElementsByClassName("tab-item");
+    console.log(tabItem)
+    for (let i = 0; i < tabItem.length; i++) {
+      tabItem[i].index = i;
+      tabItem[i].onclick = function () {
+        console.log(tabItem[i]);
+      };
+    }
+  </script>
+</html>

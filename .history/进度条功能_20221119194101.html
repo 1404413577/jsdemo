@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 400px;
+            margin-bottom: 30px;
+            border: 1px solid red;
+            border-radius: 16px;
+        }
+
+        .show {
+            width: 0;
+            height: 40px;
+            background-color: aqua;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="show">
+        <span id="span">0</span><span>%</span>
+    </div>
+    <button id="btn">安装</button>
+</body>
+<script>
+    let btn = document.getElementById("btn")
+    let span = document.getElementById("span")
+    let div = document.getElementsByTagName("div")
+    btn.onclick = function () {
+        let num = 0
+        let timer = setInterval(() => {
+            num += 10
+            div[1].style.width = num + "px";
+            if (num === 400) {
+                clearInterval(timer)
+            }
+        }, 100)
+
+        let count = 0
+        let sumer = setInterval(() => {
+            count += 1
+            span.innerHTML = count
+            if (count === 100) {
+                clearInterval(sumer)
+            }
+        }, 40)
+    }
+
+</script>
+
+</html>

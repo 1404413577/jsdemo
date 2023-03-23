@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+<script>
+    // es5
+    // let obj = {}
+    // let newVal = ''
+    // Object.defineProperty(obj, "name", {
+    //     get() {
+    //         console.log("get")
+    //         return newVal
+    //     },
+    //     set(val) {
+    //         newVal = val
+    //         console.log("set")
+
+    //     }
+
+    // })
+    // console.log(obj.name)
+    // obj.name = "海"
+    // console.log(obj.name)
+
+    // es6
+
+    // let obj = {}
+    // let p = new Proxy(obj,{
+
+    // });
+    // p.name = "海"
+    // console.log(obj.name)
+    // for(let key in obj){
+    //     console.log(key)
+    // }
+
+    // 案例 返回数组的下标 数组代理
+    // let arr = [1, 2, 3, 4, 5]
+    // let p1 = new Proxy(arr, {
+    //     get(target, prop) {
+    //         console.log(target, prop)
+    //         return prop in target ? target[prop] : 'error'
+
+    //     }
+    // })
+    // console.log(arr[4])
+    // console.log(arr[8])
+
+    // // 案例字典功能 对象代理
+    // let dict = {
+    //     "apple": "苹果",
+    //     "banana": "香蕉",
+    //     "huiwei": "爱国"
+    // }
+
+    // dict = new Proxy(dict, {
+    //     get(target, prop) {
+    //         return prop in target ? target[prop] : prop
+
+    //     }
+    // })
+    // console.log(dict['huiwei'])
+    // console.log(dict['banana'])
+    // console.log(dict['apple'])
+
+
+    // // set代理
+    // let arr = []
+    // arr = new Proxy(arr, {
+    //     set(target, prop, value) {
+    //         if (typeof value === "number") {
+    //             target[prop] = value
+    //             return true
+    //         } else {
+    //             return falsem 
+    //         }
+    //     }
+    // });
+    // arr.push(5), arr.push(6)
+    // console.log(arr[0], arr[1])
+    // console.log(arr)
+
+
+    let userInfo = {
+        username: "hai",
+        age: 22,
+        // 下划线代表的是一个私有属性
+        _password: '***'
+    }
+    userInfo = new Proxy(userInfo, {
+        ownKeys(target) {
+            return Object.keys(target).filter(key => !key.startsWith('_'))
+
+        }
+    })
+
+    for (let key in userInfo){
+        console.log(key)
+    }
+
+    for(let key in use){
+        console.log(key)
+    }
+   
+
+</script>
+
+</html>

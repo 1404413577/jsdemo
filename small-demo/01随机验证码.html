@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ipt{
+            width: 300px;
+            height: 30px;
+            border-radius: 8px;
+            color: black;
+            font-size: 16px;
+            padding-left: 10px;
+        }
+        .code{
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 8px;
+            background-color: darkgray;
+            cursor: pointer;
+            display: inline-block;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <input type="text" placeholder="请输入验证码" id="ipt" class="ipt">
+        <span id="code" class="code"></span>
+        <button id="btn">登录</button>
+    </div>
+</body>
+<script>
+    let ipt = document.getElementById("ipt")
+    let code = document.getElementById("code")
+    let btn = document.getElementById("btn")
+
+    function Random(codeFn) {
+        let str = "qwertyuiop1234567890"
+        let strCode = "";
+        for (let i = 0; i < codeFn; i++) {
+            let n = Math.floor(Math.random() * str.length)
+            strCode += str[n];
+
+        }
+        code.innerHTML = strCode;
+    }
+
+    Random(4)
+
+    code.onclick=function(){
+        Random(4)
+    }
+
+    btn.onclick=function(){
+        if(code.innerHTML===ipt.value){
+            location.href="https://www.baidu.com"
+        }else{
+            alert("验证码错误")
+        }
+    }
+</script>
+
+</html>

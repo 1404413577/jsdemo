@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+            position: absolute;
+            top:100px
+        }
+
+        .customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .customers tr:hover {
+            background-color: #ddd;
+        }
+
+        .customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .main{
+            width: 60%;
+            height: 400px;
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        姓名：<input type="text">
+        年龄：<input type="text">
+        性别: <input type="number">
+        手机： <input type="text">
+        <button type="submit">提交</button>
+    </div>
+
+    <table class="customers">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>手机</th>
+            <th>删除</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>22</td>
+            <td>男</td>
+            <td>17754434165</td>
+            <td>删除</td>
+        </tr>
+    </table>
+</body>
+
+</html>

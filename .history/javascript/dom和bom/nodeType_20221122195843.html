@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="father" id="fa">
+        <p>我是一个文本</p>
+        <p>我是内容</p>
+    </div>
+    <script>
+        let bodyChildNode = document.body.childNodes;
+        console.log(bodyChildNode)
+        let fa = document.getElementById("fa")
+        fa.innerHTML = "<p>我是一个div标签</p>"
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* 导航区域 */
+
+        .container {
+            width: 100%;
+            height: auto;
+        }
+
+        .container .navgation {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container .navgation nav {
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+            display: flex;
+            flex-direction: row;
+
+
+        }
+
+        .ull li img {
+            width: 100px;
+        }
+
+        .container .navgation nav ul {
+            display: flex;
+            flex-direction: row;
+
+
+        }
+
+        .container .navgation nav ul li {
+            width: 80px;
+            height: 70px;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container .navgation nav .ull {
+            margin-left: 50px;
+        }
+
+        .container .navgation nav .ulr {
+            margin-left: 350px;
+
+        }
+
+        .container .navgation nav .ulr .ipt {
+            margin-right: 50px;
+        }
+
+        /* 内容区域 */
+        .content {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .left {
+            width: 40%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .p1 {
+            margin-top: 18px;
+            font-size: 40px;
+            font-weight: bold;
+            color: black;
+            line-height: 58px;
+            margin: 0;
+        }
+
+        .p2 {
+            margin-top: 8px;
+            font-size: 16px;
+            color: rgba(27, 28, 30, 0.8);
+            line-height: 28px;
+        }
+
+        .btn1 {
+            width: 180px;
+            height: 48px;
+            line-height: 48px;
+            font-size: 20px;
+            color: white;
+            padding: 0;
+            border-radius: 4px;
+            background-color: #fe7300;
+        }
+
+        .btn2 {
+            width: 180px;
+            height: 48px;
+            line-height: 48px;
+            font-size: 20px;
+            color: #fe7300;
+            padding: 0;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .datademo {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+
+        .datademo div {
+            width: 100px;
+            height: 60px;
+            margin-left: 10px;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .right {
+            width: 40%;
+            height: 400px;
+            background-color: darkcyan;
+            border: 1px solid black"
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navgation">
+            <nav>
+                <ul class="ull">
+                    <li><img src="./images/gitee.png" alt=""></li>
+                    <li> <a href="">开源软件</a></li>
+                    <li> <a href="">企业版</a></li>
+                    <li> <a href="">高校版</a></li>
+                    <li><a href="">私有云</a></li>
+                    <li><a href="">博客</a></li>
+                    <li><a href="">GO</a></li>
+                </ul>
+                <ul class="ulr">
+                    <li class="ipt"><input type="text" placeholder="搜开源"></li>
+                    <li><a href="">svg</a></li>
+                    <li><a href="">登录</a></li>
+                    <li><a href="">注册</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="left">
+                <div>
+                    <p class="p1">企业级 DevOps 研发管理平台</p>
+                    <p class="p2">帮助开发者/团队/企业更好地管理代码，让软件研发更高效</p>
+                    <button class="btn1">注册gitee</button>
+                    <button class="btn2">免费开通企业版</button>
+                </div>
+                <div class="datademo">
+                    <div>
+                        <li>开发者</li>
+                        <li>800
+                            万+</li>
+                    </div>
+                    <div>
+                        <li>代码仓库</li>
+                        <li>2000
+                            万+</li>
+                    </div>
+                    <div>
+                        <li>企业客户</li>
+                        <li>20
+                            万+</li>
+                    </div>
+                    <div>
+                        <li>高校</li>
+                        <li>3500
+                            +</li>
+                    </div>
+                </div>
+            </div>
+            <div class="right" ><img src="./images/content.webp" alt="" style="width: 100%; height: 100%"></div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>

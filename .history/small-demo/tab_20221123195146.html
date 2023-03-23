@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        div{
+            width: 300px;
+            margin: 20px auto;
+            border:1px solid red;
+        }
+        ul li{
+            width: 33%;
+            line-height: 30px;
+            text-align: center;
+            background-color: pink;
+            border-right: 1px solid #666;
+            float: left;
+            list-style: none;
+            cursor: pointer;
+        }
+        .bg{
+            background-color: red;
+        }
+        h1{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <!-- 表示当前标签被选中 -->
+            <li class='bg'>选项一</li>
+            <li>选项二</li>
+            <li>选项三</li>
+        </ul>
+        <h1 class='show'>hello</h1>
+        <h1>world</h1>
+        <h1>大家好</h1>
+    </div>
+</body>
+<script>
+    //获取操作对象
+    var lis=document.querySelectorAll('li')
+    var hs=document.querySelectorAll('h1')
+    //遍历每个li对象
+    for(var i=0;i<lis.length;i++){
+        //给每个li对象添加一个属性，表示当前li对象的下标
+        lis[i].setAttribute('index',i)
+        //给每个li标签绑定点击事件
+        lis[i].onclick=function(){
+            //获取当前点击的li对象的下标
+            var index1=this.getAttribute('index')
+            //把所有h1标签和li标签中的class属性值清空
+            for(var j=0;j<hs.length;j++){
+                hs[j].className=''
+                lis[j].className=''
+            }
+            //给指定的li和h1标签添加class属性值
+            lis[index1].className='bg'
+            hs[index1].className='show'
+        }
+    }
+</script>
+</html>

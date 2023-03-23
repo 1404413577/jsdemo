@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 迭代器是一种接口机制 为各种不同的数据结构提供统一访问的机制 
+    一句话：不支持遍历的数据结构 可遍历
+    -->
+  </head>
+  <body></body>
+  <script>
+    function makeIterator(arr) {
+      let nextIndex = 0;
+      return {
+        next() {
+          return nextIndex < arr.length
+            ? {
+                value: arr[nextIndex++],
+                done: false,
+              }
+            : {
+                value: undefined,
+                done: true,
+              };
+        },
+      };
+    }
+    let it = makeIterator(['a','b','c','d','e']);
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+  </script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .nima {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nima">
+      <label for="account">账号</label>
+      <input
+        type="text"
+        value=""
+        name="account"
+        class="account"
+        placeholder="请输入账号"
+      />
+      <br /><br />
+      <label for="pwd">密码</label>
+      <input
+        type="password"
+        value=""
+        name="pwd"
+        class="pwd"
+        placeholder="请输入密码"
+      />
+      <br /><br />
+      <button class="btn" id="btn">登录/注册</button>
+    </div>
+  </body>
+</html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  let sub = document.getElementById("btn");
+  sub.addEventListener("click", function () {
+    axios({
+      url: "/login/register",
+      method: "POST",
+      data: {
+        id: 6,
+        name: "js",
+        date: "2022-11-19",
+        prince: 56,
+        num: 1
+      },
+      heads: {
+        "content-type": "application/x-www-form-urlencoded",
+      },
+      success(res) {
+        console.log(res); 
+      },
+      error(err) {
+        console.log(err);
+      },
+    });
+  });
+</script>

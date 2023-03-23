@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .main {
+      width: 1000px;
+      margin: 0 auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #ccc;
+    }
+    button {
+      padding: 5px 10px;
+      border: none;
+      background-color: #ccc;
+      cursor: pointer;
+    }
+    p{
+        margin: 25px;
+    }
+  </style>
+  <body>
+    <!-- 学生成绩管理 -->
+  </body>
+  <div class="main">
+    <table>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>语文</th>
+          <th>数学</th>
+          <th>英语</th>
+          <th>总分</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+    <p>添加成绩</p>
+    <form action="">
+      <label for="name">姓名</label>
+      <input type="text" id="name" />
+      <label for="chinese">语文</label>
+      <input type="text" id="chinese" />
+      <label for="math">数学</label>
+      <input type="text" id="math" />
+      <label for="english">英语</label>
+      <input type="text" id="english" />
+      <button type="button" id="add">添加</button>
+  </div>
+  <script>
+    // 生成学生成绩数组
+    let arr = [
+      {
+        name: "张三",
+        chinese: 80,
+        math: 90,
+        english: 100,
+      },
+      {
+        name: "李四",
+        chinese: 90,
+        math: 80,
+        english: 100,
+      },
+      {
+        name: "王五",
+        chinese: 80,
+        math: 100,
+        english: 90,
+      },
+    ];
+    // 遍历数组 生成表格 tr td  button 
+    let tbody = document.querySelector("tbody");
+    for (let i = 0; i < arr.length; i++) {
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+        let td4 = document.createElement("td");
+        let td5 = document.createElement("td");
+        let td6 = document.createElement("td");
+        let btn1 = document.createElement("button");
+        td1.innerHTML = arr[i].name;
+        td2.innerHTML = arr[i].chinese;
+        td3.innerHTML = arr[i].math;
+        td4.innerHTML = arr[i].english;
+        td5.innerHTML = arr[i].chinese + arr[i].math + arr[i].english;
+        btn1.innerHTML = `<button>${'删除'}</button>`;
+        td6.appendChild(btn1);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tr.appendChild(td5);
+        tr.appendChild(td6);
+        tbody.appendChild(tr);
+    }
+    
+    // 删除
+    let btns = document.querySelectorAll("button");
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].onclick = function () {
+        let tr = this.parentNode.parentNode;
+        tr.parentNode.removeChild(tr);
+      };
+    }
+    // 添加
+    let add = document.querySelector("#add");
+    add.onclick = function () {
+      let name = document.querySelector("#name").value;
+      let chinese = document.querySelector("#chinese").value;
+      let math = document.querySelector("#math").value;
+      let english = document.querySelector("#english").value;
+      let tbody = document.querySelector("tbody");
+      let tr = document.createElement("tr");
+      let td1 = document.createElement("td");
+      let td2 = document.createElement("td");
+      let td3 = document.createElement("td");
+      let td4 = document.createElement("td");
+      let td5 = document.createElement("td");
+      let td6 = document.createElement("td");
+      let btn1 = document.createElement("button");
+      td1.innerHTML = name;
+      td2.innerHTML = chinese;
+      td3.innerHTML = math;
+      td4.innerHTML = english;
+      td5.innerHTML = parseInt(chinese) + parseInt(math) + parseInt(english);
+      btn1.innerHTML = `<button>${'删除'}</button>`;
+      td6.appendChild(btn1);
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      tr.appendChild(td4);
+      tr.appendChild(td5);
+      tr.appendChild(td6);
+      tbody.appendChild(tr);
+      btn1.onclick = function () {
+        let tr = this.parentNode.parentNode;
+        tr.parentNode.removeChild(tr);
+      };
+    };
+    // 修改
+   
+  </script>
+</html>

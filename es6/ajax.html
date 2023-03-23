@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-decoration: none;
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <div id="div"></div>
+
+  <body>
+    <!-- // var div = document.getElementById("div")
+// div.innerHTML = obj
+// console.log(div) -->
+    <script>
+      // ajax
+      function ajax(url, callback) {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+          xmlhttp = new XMLHttpRequest();
+        } else {
+          // 兼容早期的浏览器
+          xmlhttp = new ActiveXObject("Microsoft.XML");
+        }
+        // 发送请求
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            // var obj = JSON.stringify(xmlhttp.responseText)
+            var obj = JSON.parse(xmlhttp.responseText);
+            callback(obj);
+          }
+        };
+      }
+
+      // 获取
+      ajax("static/a.json", (res) => {
+        var div = document.getElementById("div");
+        // 获取的数据是一个对象，需要转换成字符串
+        let demo = JSON.stringify(res.data);
+        let obj = JSON.parse(demo);
+        // 将obj的值单个解构出来
+        for (let i = 0; i < obj.length; i++) {
+          // 遍历对象的值存入数组
+          let name = obj[i].name;
+          let age = obj[i].age;
+          let sex = obj[i].sex;
+          console.log(name);
+          //   将name的值存入div 插入ul li标签
+
+          div.innerHTML += `<ul><li>${name}</li><li>${age}</li><li>${sex}</li></ul>`;
+        }
+      });
+      // 发送请求
+ 
+    </script>
+  </body>
+</html>

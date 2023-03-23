@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../static/img1.jpg" alt="">
+    <br>
+    <button id="pre">上</button>
+    <button id="next">下</button>
+</body>
+<script>
+    let pre = document.getElementById("pre")
+    let next = document.getElementById("next")
+    let img = document.getElementsByTagName("img")[0];
+    let index = 0
+    pre.onclick = function() {
+        index ++;
+        
+     
+        img.src = `../static/img${index}.jpg`;
+    }
+
+
+</script>
+</html>

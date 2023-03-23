@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt" value="" oninput="changeData(this.value)">
+<h2 id="title"></h2>
+<script>
+    var data = {};
+    var title = document.getElementById("title");
+    var ipt = document.getElementById("ipt");
+
+
+  	// 定义对象属性
+    Object.defineProperty(data, "msg", {
+        get: function(){
+            return "你好世界"
+        },
+        set: function(newValue){	// 自动捕获被修改后最新的值
+            title.innerHTML = newValue;
+          	txt.value = newValue;
+        }
+    })
+  
+  	// 最初的赋值
+  	title.innerHTML = data.msg;
+  	ipt.value = data.msg;
+  
+  	// 拿到input的数据，修改msg，当msg修改时，会触发set方法
+    function changeData(value){
+        data.msg = value;
+    }
+</script>
+</body>
+</html>

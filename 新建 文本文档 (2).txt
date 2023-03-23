@@ -1,0 +1,14 @@
+create database myatis;
+use mybatis;
+drop table if exists tb_user;
+create table tb_user(
+id int primary key auto_increment,
+username varchar(20),
+password varchar(20),
+gender char(1),
+addr varchar(30)
+);
+
+insert into tb_user values (1,"张三","123","男","北京");
+insert into tb_user values (2,"里斯","456","男","北京");
+insert into tb_user values (3,"王璐","789","女","湖北");

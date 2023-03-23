@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            width: 250px;
+            height: 300px;
+            padding-top: 50px;
+
+        }
+        .content input{
+            border-radius: 15px;
+            height: 25px;
+            width: 250px;
+            padding-left: 20px;
+        }
+        .show{
+            width: 280px;
+            height: 250px;
+            border-radius: 15px;
+            background-color: chartreuse;
+            display: none;
+            margin-top: 10px;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>模糊搜索功能</h1>
+    <div class="content">
+        <div class="search">
+            <input type="text" placeholder="请输入信息" id="val">
+        </div>
+        <div class="show" id="show"></div>
+    </div>
+</body>
+<script>
+    let arr = [
+        "es6进阶 编号001",
+        "人工智能编程 编号002",
+        "ajax技术 编号003",
+        "vue核心技术 编号004",
+        "javascript入门到精通 编号005",
+        "python入门到精通 编号006"
+        
+    ]
+
+    let input = document.getElementById("val")
+    let submit = document.getElementById("sub")
+    let show = document.getElementById("show")
+    input.onkeyup = function(){
+        show.style.display = "block";
+        let str = '';
+        arr.forEach((item)=>{
+            let res = item.indexOf(input.value);
+            if(res != -1){
+                str += '<p>'+item+'</p>'
+            }
+
+        })
+        if(!input.value || !str){
+            show.innerHTML = '<p>暂无搜索结果</p>'
+        }else{
+            show.innerHTML = str;
+        }
+    }
+    input.onblur = function(){
+        show.style.display = "none";
+        input.value =""
+    }
+</script>
+</html>    

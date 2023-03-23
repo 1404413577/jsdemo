@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
+        float: left;
+      }
+      div.card {
+        overflow: hidden;
+      }
+      div.card li {
+        width: 110px;
+        height: 50px;
+        background: linear-gradient(#e1670e, orange, #e1670e);
+        cursor: pointer;
+        text-align: center;
+        line-height: 50px;
+      }
+      div.card li.active {
+        background: linear-gradient(green, lightgreen, green);
+      }
+      div.con {
+        width: 330px;
+        height: 200px;
+        overflow: hidden;
+      }
+      div.con li {
+        width: 330px;
+        height: 200px;
+        display: none;
+        background: linear-gradient(45deg, green, lightgreen);
+        line-height: 50px;
+        text-indent: 2em;
+      }
+      div.con li.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" id="card">
+      <ul>
+        <li class="active">奶茶1</li>
+        <li>奶茶2</li>
+        <li>奶茶3</li>
+      </ul>
+    </div>
+
+    <div class="con" id="con">
+      <ul>
+        <li class="active">中国好奶茶1</li>
+        <li>中国好奶茶2</li>
+        <li>中国好奶茶3</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    (function () {
+      try {
+        var card = document.getElementById("card");
+        var cardLi = card.getElementsByTagName("li");
+        var con = document.getElementById("con");
+        var conLi = con.getElementsByTagName("li");
+
+        for (var i = 0; i < cardLi.length; i++) {
+          cardLi[i].index = i;
+          cardLi[i].onclick = function () {
+            console.log(this.index);
+            for (var i = 0; i < cardLi.length; i++) {
+              cardLi[i].className = "";
+              conLi[i].className = "";
+            }
+
+            this.className = "active";
+            conLi[this.index].className = "active";
+          };
+        }
+      } catch (err) {
+        return false;
+      }
+    })();
+  </script>
+</html>

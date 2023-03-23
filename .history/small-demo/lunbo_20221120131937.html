@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+     
+        .box {
+          width: 566px;
+          height: 333px;
+          /* overflow: hidden; */
+          margin: 100px auto;
+          position: relative;
+        }
+     
+        .box>img {
+          width: 566px;
+          height: 333px;
+        }
+     
+        ul {
+          position: absolute;
+          list-style: none;
+          overflow: hidden;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+     
+        li {
+          float: left;
+          width: 10px;
+          height: 10px;
+          background-color: papayawhip;
+          border-radius: 50%;
+          color: powderblue;
+          margin-left: 10px;
+        }
+      </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../static/加菲猫.png" alt="">
+        <img src="../static/布偶猫.png" alt="">
+        <img src="../static/橘猫.png" alt="">
+        <img src="../static/狸花猫.png" alt="">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+</body>
+
+<script>
+    // var imgs = document.querySelectorAll(".box img");//获取到所有图片
+    // var btn = document.querySelectorAll(".box li");//获取小圆点
+    // var num = 0;
+    // btn[num].style.backgroundColor = "red";
+    // var timer = setInterval(roll, 2000)
+    // function roll() {
+    //   num++;
+    //   num >= imgs.length ? num = 0 : num = num;
+    //   imgs.forEach((item, index) => {
+    //     item.style.display = 'none'
+    //     btn[index].style.background = 'papayawhip'
+   
+    //   })
+    //   imgs[num].style.display = 'block' //显示相对应的图片
+    //   btn[num].style.background = 'red'
+    // }
+   
+   
+   
+    // btn.forEach(function (item, index) {
+    //   item.onmouseenter = function () {
+    //     clearInterval(timer)
+    //     num = index - 1
+    //     roll()
+    //   }
+    //   item.onmouseleave = function () {
+    //     timer = setInterval(roll, 2000)
+    //   }
+    // })
+  </script>
+</html>

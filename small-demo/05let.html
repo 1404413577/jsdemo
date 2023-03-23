@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+    </div>
+</body>
+<!-- let 不允许重复声明
+不属于顶层对象
+let 不存在变量提升
+
+
+-->
+<script>
+//     var a = 5
+//     console.log(a)
+//     delete a 
+//     console.log(a)
+//     console.log(window.a)
+
+    
+//     // var 变量提升
+//     console.log(5)
+//     var b = 5
+
+
+//     for (var i =0; i<3;i++){
+//         console.log("循环内"+i)
+//     }
+//     console.log("循环外"+i)
+
+// console.log(".....")
+
+//     for(let i =0; i<3;i++){
+//         setTimeout(()=>{
+//             console.log(i)
+//         },5000)
+//         console.log("循环内"+i) 
+//     }
+//     console.log("循环外"+i)
+
+// 解构赋值
+// let arr = [1,2,3 ]
+// let a = arr[0]
+// let b = arr[1]
+// let c = arr[2]
+// console.log(a,b,c)
+
+// let [a1,b1,c1,d1] = [1,2,3,[4.5]]
+// console.log(a1,b1,c1,d1)
+
+// let  user  ={
+//     name:"刘海浪",
+//     age:22
+// }
+
+// // let name = user.name
+// // let age = user.age
+
+// let {name,age} = user
+
+// console.log(user)
+
+// 字符串解构赋值
+// let str = "liuhailang";
+// count = 0;
+// for(let i = 0; i<str.length;i++){
+//     console.log(str[i],count = i)
+
+// }
+
+// function foo1(a,b,c){
+//     console.log(a,b,c);
+// }
+
+// let arr = [1,2,3]
+// foo1(arr)
+
+
+// function foo2({name,age,school}){
+//     console.log("姓名："+name,"年齡："+age,"大學:"+school);
+//     // 模板字符串
+//     console.log(`我叫：${name},今年：${age}`);
+// }
+
+// let obj = {
+//     name: "劉海浪",
+//     age:22,
+//     school:"武漢紡織大學"
+// }
+
+// foo2(obj)
+
+
+// // json解構
+// let json = '{"a":"hello","b":"world"}'
+// let {a,b} = JSON.parse(json)
+// console.log(a,b)
+
+// // for
+// let arr2 = [1,2,3]
+// for(let i=0;i<arr2.length;i++){
+//     console.log(arr2[i])
+// }
+// // foreach
+// arr.forEach((ele,index,array)=>{
+//     console.log(ele,index,array)
+
+// })
+// // map 的返回值一个新的数组
+// // arr2.map((val)=>{
+// //     console.log(val)
+
+// // })
+// console.log("map")
+// let res =arr2.map((val)=>{
+//     // console.log(val)
+//     return val
+
+// })
+// console.log(arr,res)
+
+// // filter 筛选
+// let res1 = arr.filter((val)=>{
+//     return val==3
+// })
+// console.log(arr,res1)
+
+// 
+// let box = document.getElementById("box")
+// console.log(box)
+
+
+// // 类数组和为数组
+// let arraylike = {
+//     0:"es6",
+//     1:"es7",
+//     2:"es8",
+//     length:3
+// }
+
+// let arr = Array.from(arraylike)
+// arr.push("es9","es10")
+// console.log(arr)
+
+// 伪数组转化为真正的数组
+// let arr = new Array(3)
+// let arr = Array.of(3)
+// console.log(arr)
+
+// let arrMix =Array.of(1,true,"hailang",[1,2,3,4,5,6],
+// {
+//     name:"海浪"
+// })
+// console.log(arrMix)
+
+// 替换数组的元素
+let arrRep = [1,2,3,4,5]
+arrRep.copyWithin(1,3)
+console.log(arrRep)
+
+
+let arrfill =[1,2,3,4,5,6,7,'hailang']
+arrfill.fill("海浪",1,3)
+console.log(arrfill)
+console.log(arrfill.includes(NaN))
+
+
+</script>
+</html>  

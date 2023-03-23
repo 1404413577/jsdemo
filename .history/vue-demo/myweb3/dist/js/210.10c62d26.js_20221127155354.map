@@ -1,0 +1,27 @@
+{
+    "version": 3,
+    "file": "js/210.10c62d26.js",
+    "mappings": "0NACEA,EAAAA,EAAAA,IAGM,aAFJC,EAAAA,EAAAA,GAAgB,kBAAXC,EAAAA,OAAK,IACVD,EAAAA,EAAAA,GAAqC,UAA5BE,QAAK,oBAAED,EAAAA,UAAAA,EAAAA,YAAAA,KAAU,O,eAM9B,GACIE,QAEI,IAAIC,GAAQC,EAAAA,EAAAA,IAAI,GACZC,EAAW,KAEXF,EAAMG,OAAO,EAEjB,MAAO,CAACH,QAAME,WAElB,G,QCdJ,MAAME,GAA2B,OAAgB,EAAQ,CAAC,CAAC,SAASC,KAEpE,O",
+    "sources": [
+        "webpack://myweb3/./src/views/OnClick.vue",
+        "webpack://myweb3/./src/views/OnClick.vue?456c"
+    ],
+    "sourcesContent": [
+        "<template>\r\n  <div>\r\n    <p>{{count}}</p>\r\n    <button @click=\"btnClick\">累加</button>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport {ref} from 'vue'\r\nexport default {\r\n    setup(){\r\n        // 此时我们使用ref指定count的默认值为1，因此上面data中的count会失效\r\n        let count = ref(0);\r\n        let btnClick = ()=>{\r\n            // 修改ref中的值要用xxx.value\r\n            count.value++;\r\n        }\r\n        return {count,btnClick}\r\n       \r\n    }\r\n}\r\n</script>\r\n\r\n\r\n<style>\r\n\r\n</style>",
+        "import { render } from \"./OnClick.vue?vue&type=template&id=0ac11472\"\nimport script from \"./OnClick.vue?vue&type=script&lang=js\"\nexport * from \"./OnClick.vue?vue&type=script&lang=js\"\n\nimport exportComponent from \"D:\\\\Users\\\\lhl\\\\Desktop\\\\jsdemo\\\\vue-demo\\\\myweb3\\\\node_modules\\\\vue-loader\\\\dist\\\\exportHelper.js\"\nconst __exports__ = /*#__PURE__*/exportComponent(script, [['render',render]])\n\nexport default __exports__"
+    ],
+    "names": [
+        "_createElementBlock",
+        "_createElementVNode",
+        "$setup",
+        "onClick",
+        "setup",
+        "count",
+        "ref",
+        "btnClick",
+        "value",
+        "__exports__",
+        "render"
+    ],
+    "sourceRoot": ""
+}

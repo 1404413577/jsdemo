@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .drag {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: aqua;
+        position: absolute;
+      }
+
+      body {
+        width: 100vh;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="drag" id="drag"></div>
+  </body>
+  <script>
+    let drag = document.getElementById("drag");
+    drag.onmouseover = function (e) {
+      let oldX = e.offsetX;
+        oldY = e.offsetY;
+        console.log(oldX,oldY);
+        window.onmouseover = function (e) {
+            console.log(e.clientX,e.clientY);
+            drag.style.left = e.clientX-oldX + "px";
+            drag.style.top = e.clientY-oldY + "px";
+        }
+    };
+  </script>
+</html>

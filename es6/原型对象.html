@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let obj1 = {
+        //     play: function () {
+        //         console.log("弹吉他")
+        //     }
+        // }
+        // function People(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.play = obj1.play;
+        // }
+        // People.prototype = {
+        //     laern:function (){
+        //         console.log("学前端")
+        //     }
+        // }
+        // People.prototype.eat = function () {
+        //     console.log("吃东西")
+        // }
+        // People.prototype.play = function () {
+        //     console.log("玩游戏")
+        // }
+
+        // let p1 = new People("海", 22);
+        // console.log(p1)
+
+
+        // 构造函数
+        function People(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        // 原型对象
+        People.prototype.eat = function () {
+            console.log("吃东西")
+        }
+        People.prototype.learn = function () {
+            console.log("学东西")
+            count = 0
+            for (let i = 0; i < 100; i++) {
+                if (i % 2 == 0) {
+                    console.log(i)
+                    count += i
+                }
+            }
+            console.log(count)
+        }
+
+        // 实例对象
+        let p1 = new People("张三", 18)
+        p1.eat()
+        p1.learn()
+        console.log(p1)
+        console.log(People.prototype.constructor)
+        console.log(p1.constructor)
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

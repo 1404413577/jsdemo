@@ -1,0 +1,25 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div>
+      <p id="article">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+      <button id="play">阅读</button>
+    </div>
+    <script>
+      document.getElementById("play").addEventListener("click", function () {
+        var article = document.getElementById("article").innerText;
+        responsiveVoice.speak(article);
+      });
+
+
+
+      
+    </script>
+  </body>
+</html>

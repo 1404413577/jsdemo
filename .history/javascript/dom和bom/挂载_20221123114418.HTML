@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="father" id="father">
+        son
+    </div>
+</body>
+<script>
+    let father = document.getElementById("father");
+    let family = document.querySelector(".father");
+    // father.innerHTML = "<h2>我是一个h2标签</h2>";
+    let h2Ele = document.createElement("h2")
+    h2Ele.textContent = "我是H2标签";
+    // console.log(h2Ele);
+    // father.append(h2Ele)
+    father.before(h2Ele)
+    // 删除 替换 克隆节点 remove() replaceChild() cloneNode()
+    father.remove(h2Ele)
+</script>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+            position: absolute;
+            top: 500px
+        }
+
+        .customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .customers tr:hover {
+            background-color: #ddd;
+        }
+
+        .customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .main {
+            width: 60%;
+            height: 400px;
+            border: 1px solid #4CAF50;
+        }
+
+        .main input {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <p><span>姓名：</span>
+            <input type="text" class="name" id="name">
+        </p>
+        <p><span>年龄：</span>
+            <input type="text" class="age" id="age">
+        </p>
+        <p><span>性别:</span>
+            <select name="gender" id="gender">
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+        </p>
+        <p><span>手机：</span>
+            <input type="text" class="phone" id="phone">
+        </p>
+        <p>
+            <button type="submit" id="btn">提交</button>
+
+        </p>
+
+
+    </div>
+
+    <table class="customers">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>手机</th>
+            <th>删除</th>
+        </tr>
+        <tr id="customers">
+        </tr>
+    </table>
+</body>
+<script>
+
+    let gender = document.getElementById("gender");
+    let input = document.getElementsByTagName("input");
+    let btn = document.getElementById("btn");
+    let customers = document.getElementById("customers")
+    let staus = [];
+    btn.onclick = function () {
+        let obj = { name: input[0].value, age: input[1].value, gender: gender.value, phone: input[2].value }
+        staus.push(obj)
+        console.log(staus)
+        customers.innerHTML = JSON.stringify(staus)
+    }
+    
+
+
+
+</script>
+
+</html>

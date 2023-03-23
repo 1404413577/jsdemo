@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style-type: none;
+      }
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .banxin {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+      }
+      .header {
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+      .logo {
+        width: 50%;
+        height: 100px;
+        background-color: #fff;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+      }
+      .nav {
+        width: 50%;
+        height: 100px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      li {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content {
+        flex: 1;
+        background-color: #fff;
+        padding-top: 0px; /* 导航条高度 */
+        padding-bottom: 60px; /* 底部高度 */
+        overflow: auto; /* 滚动条 */
+      }
+
+      .swiper {
+        /* 将图片插进去 */
+        width: 100%;
+        height: 600px;
+        background-image: url(../static/banner02.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .swiper h1 {
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+        display: flex;
+        color: #f2f2f2;
+        font-size: 52px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 200px;
+      }
+      .swiper p {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        color: #f2f2f2;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .class-nav {
+        width: 544px;
+        height: 80px;
+        display: flex;
+        /* 上下外边距50px */
+        padding: 50px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+      }
+      .class-nav strong {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+        color: #dcdcdc;
+      }
+      .lineroad {
+        /*将.lineroad显示在.class-nav中间  */
+        width: 120px;
+        height: 40px;
+        font-size: 30px;
+        color: #141414;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: -90px;
+      }
+      footer {
+        height: 60px; /* 底部高度 */
+        background-color: #f2f2f2;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="banxin">
+        <div class="header">
+          <div class="logo">
+            <img src="../static/logo (1).png" alt="" />
+          </div>
+          <div class="nav">
+            <ul>
+              <li>网站首页</li>
+              <li>关于我们</li>
+              <li>线路总汇</li>
+              <li>新闻动态</li>
+              <li>酒店展示</li>
+              <li>联系我们</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="swiper">
+          <h1>陪你踏遍世界每个角落</h1>
+          <p>
+            Since its establishment, focus on quality and credibility,
+            strengthen internal management, has been a good brand effect,
+            <br />
+            integrity servicesstandardized management in the national tourism
+            industry
+            <br />
+            has aroused strong repercussions and praise
+          </p>
+        </div>
+        <div class="class-nav">
+          <strong>LINE CONCOURSE</strong>
+        </div>
+        <span class="lineroad">线路总汇</span>
+      </div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>

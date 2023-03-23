@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="div"></div>
+
+<body>
+    <!-- // var div = document.getElementById("div")
+// div.innerHTML = obj
+// console.log(div) -->
+    <script>
+        // ajax
+        function ajax(url, callback) {
+            var xmlhttp
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // 兼容早期的浏览器
+                xmlhttp = new ActiveXObject("Microsoft.XML");
+
+            }
+            // 发送请求
+            xmlhttp.open("GET", url, true)
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var obj = JSON.stringify(xmlhttp.responseText)
+                    callback(obj)
+                }
+            }
+
+        }
+        var url = 'http://localhost:5050/list'
+        ajax(url, res => {
+            console.log(res)
+        })
+
+    </script>
+</body>
+
+</html>

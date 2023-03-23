@@ -1,0 +1,7 @@
+{
+    "emmet.includeLanguages": {
+        "editor.formatOnSave": "true",
+        "editor.formatOnType": "true"
+    },
+    "git.ignoreLimitWarning": true
+}

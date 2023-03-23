@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{msg}}</div>
+      <button @click="btnFn">点击</button>
+    </div>
+  </body>
+</html>
+<script src="./lib/vue.js"></script>
+<script>
+    // 实例化
+    new Vue({
+      el: "#app",
+      data: {
+        msg: "你好，世界",
+      },
+      methods: {
+        btnFn() {
+          this.msg = this.msg === "你好，世界" ? "hello world" : "你好，世界";
+        },
+      },
+    });
+
+</script>

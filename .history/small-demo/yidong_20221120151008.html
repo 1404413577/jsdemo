@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .remove {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: absolute;
+            left: 0px;
+        }
+
+        button {
+            top: 120px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="remove" id="div"></div>
+    <button>开始</button>
+    <button>停止</button>
+</body>
+<script>
+    let div = document.getElementById("div");
+    let btn = document.getElementsByTagName("button")
+    btn[0].onclick = function () {
+        let num = 0
+        let remove = setInterval(() => {
+            num += 10
+            div.style.left = num + "px"
+            if (num === 200) {
+                clearInterval(remove)
+            }
+
+        }, 100)
+    }
+    btn[1].onclick = function () {
+        let num = 200
+        let remove = setInterval(() => {
+            num -= 10
+            div.style.left = num + "px"
+            if (num === 0) {
+                clearInterval(remove)
+            }
+
+        }, 100)
+    }
+
+
+</script>
+
+</html>

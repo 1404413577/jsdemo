@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 350px;
+        height: 400px;
+        border: 1px solid #ccc;
+      }
+      .top {
+        width: 350px;
+        height: 300px;
+        border: 1px solid black;
+      }
+      .down {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+      .down img {
+        width: 80px;
+        height: 90px;
+        border: 1px solid black;
+        display: block;
+        cursor: pointer;
+      }
+      .top img {
+        width: 350px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <img src="../static/加菲猫.png" alt="" />
+      </div>
+      <div class="down">
+        <img src="../static/加菲猫.png" alt="" />
+        <img src="../static/布偶猫.png" alt="" />
+        <img src="../static/橘猫.png" alt="" />
+        <img src="../static/狸花猫.png" alt="" />
+      </div>
+    </div>
+  </body>
+  <script>
+    let img = document.getElementsByTagName("img");
+    for (let i = 0; i < img.length; i++) {
+      console.log(img[i]);
+      img[i].onmouseover = function () {
+        try {
+          img[0].src = this.src;
+        } catch (e) {
+          console.log(e);
+        }
+      };
+    }
+  </script>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="account">账号</label>
+    <input
+      type="text"
+      value=""
+      name="account"
+      class="account"
+      placeholder="请输入账号"
+    />
+    <br /><br />
+    <label for="pwd">密码</label>
+    <input
+      type="password"
+      value=""
+      name="pwd"
+      class="pwd"
+      placeholder="请输入密码"
+    />
+    <br /><br />
+    <button class="btn">登录/注册</button>
+  </body>
+</html>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  console.log(getNowTime());
+
+  //获取当前时间
+  function getNowTime() {
+    var date = new Date(); //年 getFullYear()：四位数字返回年份
+    var year = date.getFullYear(); //getFullYear()代替getYear()
+    var month = date.getMonth() + 1; //月 getMonth()：0 ~ 11
+    var day = date.getDate(); //日 getDate()：(1 ~ 31)
+    var hour = date.getHours(); //时 getHours()：(0 ~ 23)
+    var minute = date.getMinutes(); //分 getMinutes()： (0 ~ 59)
+    var second = date.getSeconds(); //秒 getSeconds()：(0 ~ 59)
+    var time =
+      "当前时间是：" +
+      year +
+      "-" +
+      addZero(month) +
+      "-" +
+      addZero(day) +
+      " " +
+      addZero(hour) +
+      ":" +
+      addZero(minute) +
+      ":" +
+      addZero(second);
+    return time;
+  }
+
+  //小于10的拼接上0字符串
+  function addZero(s) {
+    return s < 10 ? "0" + s : s;
+  }
+  //   $(".btn").click(() => {
+  //     $.ajax({
+  //       url: "/book/del",
+  //       method: "POST",
+  //       data: {
+  //         id:5
+  //       },
+  //       success(res) {
+  //         console.log(res);
+  //       },
+  //       error(err) {
+  //         console.log(err);
+  //       },
+  // });
+
+  $.ajax({
+    url: "/book/add",
+    method: "POST",
+    data: {
+      id: 10,
+      name: "js",
+      date: "2022-11-19",
+      prince: "56",
+      num: "1",
+    },
+    success(res) {
+      console.log(res);
+    },
+    error(err) {
+      console.log(err);
+    },
+  });
+
+  // $.ajax({
+  //     url: "/login/register",
+  //     method: "POST",
+  //     data: {
+  //         account: $('.account').val(),
+  //         pwd: $('.pwd').val()
+  //     },
+  //     success(res){
+  //         console.log(res)
+  //     },
+  //     error(err){
+  //         console.log(err)
+  //     }
+  // })
+  //   });
+</script>
